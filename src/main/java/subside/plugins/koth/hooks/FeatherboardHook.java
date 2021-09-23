@@ -2,6 +2,7 @@ package subside.plugins.koth.hooks;
 
 import java.util.logging.Level;
 
+import be.maximvdw.featherboard.api.FeatherBoardAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -32,7 +33,7 @@ public class FeatherboardHook extends AbstractRangeHook {
         // Set board
         // To reduce randomly creating threads we check if it is the primary thread or otherwise create a sync thread
         if(Bukkit.isPrimaryThread()){
-            be.maximvdw.featherboard.api.FeatherBoardAPI.showScoreboard(player, board);
+            FeatherBoardAPI.showScoreboard(player, board);
         } else {
             Bukkit.getScheduler().runTaskLater(getPlugin(), () ->be.maximvdw.featherboard.api.FeatherBoardAPI.showScoreboard(player, board), 1);
         }

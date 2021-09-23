@@ -2,7 +2,7 @@ name: KoTH
 main: subside.plugins.koth.KothPlugin
 version: 1.5.1
 author: SubSide
-softdepend: [Multiverse-Core, Factions, Kingdoms, LegacyFactions, PlaceholderAPI, VanishNoPacket]
+softdepend: [Multiverse-Core, Factions, Essentials, FeatherBoard, Vault, mcMMO, PvPManager, PlaceholderAPI, VanishNoPacket, WorldEdit, WorldGuard]
 commands:
   koth:
     description: Gives access to koth

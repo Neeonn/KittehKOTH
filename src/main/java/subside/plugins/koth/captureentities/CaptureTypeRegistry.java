@@ -41,9 +41,7 @@ public class CaptureTypeRegistry extends AbstractModule {
         
         // LegacyFactions, Factions, and FactionsUUID
         if(hooks.isFactions()) {
-            if(pluginManager.getPlugin("LegacyFactions") != null){
-                registerCaptureType("legacyfactions", CappingLegacyFactions.class, true);
-            } else if(pluginManager.getPlugin("Factions") != null){
+            if(pluginManager.getPlugin("Factions") != null){
                 try {
                     // If this class is not found it means that Factions is not in the server
                     Class.forName("com.massivecraft.factions.entity.FactionColl");
@@ -55,21 +53,6 @@ public class CaptureTypeRegistry extends AbstractModule {
                     e.printStackTrace();
                 }
             }
-        }
-        
-        // Kingdoms
-        if(hooks.isKingdoms() && pluginManager.getPlugin("Kingdoms") != null){
-            registerCaptureType("kingdom", CappingKingdom.class, true);
-        }
-
-        // Feudal Kingdoms
-        if(hooks.isFeudalKingdoms() && pluginManager.getPlugin("Feudal") != null){
-            registerCaptureType("kingdom", CappingFeudalKingdom.class, true);
-        }
-        
-        // Gangs
-        if(hooks.isGangs() && pluginManager.getPlugin("GangsPlus") != null){
-            registerCaptureType("gang", CappingGang.class, true);
         }
         
         // mcMMO parties
